@@ -9,11 +9,11 @@ $(document).ready(function () {
         $(".one").empty();
 
         for (var x = 0; x < Team.length; x++) {
-            var newButton = $("<button>");
-            newButton.attr("class", "btn");
-            newButton.text(Team[x])
-            newButton.attr("data-team", Team[x])
-            $(".one").append(newButton)
+            var secButton = $("<button>");
+            secButton.attr("class", "btn");
+            secButton.text(Team[x])
+            secButton.attr("data-team", Team[x])
+            $(".one").append(secButton)
         }
         newGif();
     }
@@ -29,7 +29,7 @@ $(document).ready(function () {
    
     function newGif() {
     $(".btn").on("click", function () {
-        // adding query URL from Giphy API below
+        // adding query URL from Giphy API below to pull gifs from teams in var Team
         var Team = $(this).attr("data-team");
         console.log(Team)
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + Team +"&limit=10&api_key=qACPy3rUyZ5xzDE95zrcykk2D6nG52lc";
@@ -39,10 +39,10 @@ $(document).ready(function () {
             url: queryURL,
             method: "GET"
 
-        }).then(function (response) {
+        }).then(function (reply) {
             $(".nbaDiv").empty();
-            console.log(response);
-            var results = response.data
+            console.log(reply);
+            var results = reply.data
             console.log(results)
            
             for (var i = 0; i < results.length; i++) {
@@ -69,7 +69,7 @@ $(document).ready(function () {
 
 
             }
-// gif animation stop + go
+// gif animation stop + go on click
      $(".gif").on("click", function () {
         var status = $(this).attr("status")
         console.log(this)
