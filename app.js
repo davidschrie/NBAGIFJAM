@@ -32,7 +32,7 @@ $(document).ready(function () {
         // adding query URL from Giphy API below to pull gifs from teams in var Team
         var Team = $(this).attr("data-team");
         console.log(Team)
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + Team +"&limit=10&api_key=qACPy3rUyZ5xzDE95zrcykk2D6nG52lc";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=NBA+" + Team +"&limit=10&api_key=qACPy3rUyZ5xzDE95zrcykk2D6nG52lc";
    console.log(queryURL)
 
         $.ajax({
