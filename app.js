@@ -1,10 +1,10 @@
 $(document).ready(function () {
-
+// topics 
     var Team = ["Bulls", "Knicks", "Spurs", "Lakers", "Celtics", "Raptors", "Hornets", "Heat", "Bucks"];
     var newTeam = "";
 
    
-
+// adding buttons for each team + new team searched and added
     function makeButtons() {
         $(".one").empty();
 
@@ -29,7 +29,7 @@ $(document).ready(function () {
    
     function newGif() {
     $(".btn").on("click", function () {
-        
+        // adding query URL from Giphy API below
         var Team = $(this).attr("data-team");
         console.log(Team)
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + Team +"&limit=10&api_key=qACPy3rUyZ5xzDE95zrcykk2D6nG52lc";
@@ -52,8 +52,7 @@ $(document).ready(function () {
                 
                 var ratingP = $("<p>");
                 ratingP.text("Rating: " + results[i].rating)
-                // ratingP.attr("class","rating");
-                // ratingP.attr("id","rating"+[i]);
+               
 
                 var NBAGif = $("<img>");
                 NBAGif.attr("class", "gif")
@@ -70,7 +69,7 @@ $(document).ready(function () {
 
 
             }
-
+// gif animation stop + go
      $(".gif").on("click", function () {
         var status = $(this).attr("status")
         console.log(this)
